@@ -1,0 +1,88 @@
+<span style="bold" size="40">Polymorphism</>
+Polymorphism refers to a biology principle of having many different forms or stages. In OOP, polymorphism means that an object can take different forms. The subclasses of the same class can define with polymorphism their own unique behavior and yet share some of the same functionality of the parent class. For example, there is a superclass named animal and two subclasses dog and cat inheriting from animal class, which means that the class animal can be also a dog or a cat. Both dog and cat classes share some attributes and behaviors as animals, but they have different 'values' in these attributes as well as different behaviors.
+
+<span style="bold" size="40">Overriding</>
+Method overriding is when a subclass inheriting from a superclass, defines a specific behavior of an inherited method, based on its requirement. In other words, we can have a completely different code in the inherited method from the parent's class method.
+
+
+	<span style="bold">Example:</>
+	<span style="bold" color="#7f0055">class</> Animal{
+		<span style="bold" color="#7f0055">protected int</> <span color="#0000c0">age</>; <span color="#3f7f5f">//only accessible by this class and by subclasses</>
+		
+		<span style="bold" color="#7f0055">public void</> makeSound( ){
+			System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"grr"</>);
+		}
+	}
+
+	<span style="bold" color="#7f0055">class</> Dog <span style="bold" color="#7f0055">extends</> Animal{
+		
+		<span style="bold" color="#7f0055">public</> Dog(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">age</>){
+			<span style="bold" color="#7f0055">this</>.<span color="#0000c0">age</> = <span color="#9e3e63">age</>;
+		}
+
+		<span color="#3f7f5f">//overrides the superclass makeSound method</>
+		<span style="bold" color="#7f0055">public void</> makeSound( ){
+			System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"wooof"</>);
+		}
+	}
+
+	<span style="bold" color="#7f0055">class</> Cat <span style="bold" color="#7f0055">extends</> Animal{
+		
+		<span style="bold" color="#7f0055">public</> Cat(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">age</>){
+			<span style="bold" color="#7f0055">this</>.<span color="#0000c0">age</> = <span color="#9e3e63">age</>;
+		}
+
+		<span color="#3f7f5f">//overrides the superclass makeSound method</>
+		<span style="bold" color="#7f0055">public void</> makeSound( ){
+			System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"meow"</>);
+		}
+	}
+
+
+<span style="bold" size="40">ArrayList of superclass type to showcase polymorphic method calls:</>
+<span style="bold" color="#7f0055">import</> java.util.ArrayList;
+<span style="bold" color="#7f0055">public class</> Animal{
+	<span style="bold" color="#7f0055">protected int</> <span color="#0000c0">age</>; <span color="#3f7f5f">//only accessible by this class and by subclasses</>
+		
+	<span style="bold" color="#7f0055">public void</> makeSound( ){
+		System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"grr"</>);
+	}
+}
+
+<span style="bold" color="#7f0055">public class</> Dog <span style="bold" color="#7f0055">extends</> Animal{
+		
+	<span style="bold" color="#7f0055">public</> Dog(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">age</>){
+		<span style="bold" color="#7f0055">this</>.<span color="#0000c0">age</> = <span color="#9e3e63">age</>;
+	}
+	
+	<span style="bold" color="#7f0055">public void</> makeSound( ){
+		System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"wooof"</>);
+	}
+}
+
+<span style="bold" color="#7f0055">public class</> Cat <span style="bold" color="#7f0055">extends</> Animal{
+		
+	<span style="bold" color="#7f0055">public</> Cat(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">age</>){
+		<span style="bold" color="#7f0055">this</>.<span color="#0000c0">age</> = <span color="#9e3e63">age</>;
+	}
+	
+	<span style="bold" color="#7f0055">public void</> makeSound( ){
+		System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"meow"</>);
+	}
+}
+
+<span style="bold" color="#7f0055">public class</> Main{
+	<span style="bold" color="#7f0055">public static void</> main(String[ ] <span color="#9e3e63">args</>){
+		<span>ArrayList<Animal></> <span color="#9e3e63">animals</> = <span style="bold" color="#7f0055">new</> ArrayList<Animal>( );
+		Dog <span color="#9e3e63">d</> = <span style="bold" color="#7f0055">new</> Dog(1);
+		Cat <span color="#9e3e63">c</> = <span style="bold" color="#7f0055">new</> Cat(3);
+
+		<span color="#9e3e63">animals</>.add(dog);
+		<span color="#9e3e63">animals</>.add(cat);
+		
+		<span color="#3f7f5f">//for each animal call the makeSound method</>
+		<span style="bold" color="#7f0055">for</> (Animal <span color="#9e3e63">a</> : <span color="#9e3e63">animals</>){
+			<span color="#9e3e63">a</>.makeSound( );
+		}
+	}
+}

@@ -1,0 +1,102 @@
+<span style="bold" size="40">ArrayList</>
+ArrayList is a library class that represents a list and allows programmers to store and manipulate objects.
+The standard Java arrays have a fixed length meaning that after initializing them, they cannot expand
+or shrink. On the contrary, ArrayLists are initialized with an initial length, but they are dynamic. This
+means that if we try to add an element to the list past that initial length, the list itself will be automatically
+expanded. When removing elements from the list, the list may shrink.
+
+<span style="bold" size="40">Importing an ArraList</>
+ArrayList is a class that belongs in the java.util package and thus, in order to use it, it is
+necessary to import it.
+To import ArrayList type:	import java.util.ArrayList;
+
+Declaring and constructing an ArrayList
+	<span style="bold">Example:</>
+	<span style="bold" color="#7f0055">import</> java.util.ArrayList;
+	...
+	ArrayList <span color="#9e3e63">myList</> = <span style="bold" color="#7f0055">new</> ArrayList();
+	<span>ArrayList<String></> <span color="#9e3e63">animals</> = <span style="bold" color="#7f0055">new</> ArrayList<String>();
+	<span>ArrayList<String></> <span color="#9e3e63">names</> = <span style="bold" color="#7f0055">new</> ArrayList<String>(10);
+
+- The indexing starts with 0, just as with standard Java arrays.
+- Between the '<' and '>' we can optionally declare the type of objects the list will contain. The type must always be a class type meaning that primitive data types are not acceptable since they are not classes. In order to use integers, for example, we have to specify the Integer class as the type and not int data type.
+- Also, we can optionally set the initial length of the list as a constructor parameter.
+
+
+<span style="bold" size="40">ArrayList Manipulation</>
+1) adding objects in the list with the add(Object obj) method.
+2) removing objects from the list with the overloaded method remove: remove(Object obj) or remove(int indexOfObject).
+3) getting objects from the list with the get(int indexOfObject) method.
+4) removing all objects from the list with the clear() method.
+
+	<span style="bold">Example:</>
+		<span style="bold" color="#7f0055">import</> java.util.ArrayList;
+		
+		<span style="bold" color="#7f0055">public class</> Main{
+			<span style="bold" color="#7f0055">public static void</> main(String[	 ] <span color="#9e3e63">args</>){
+				
+				<span>ArrayList<String></> <span color="#9e3e63">animals</> = <span style="bold" color="#7f0055">new</> ArrayList<String>();
+				
+				<span color="#3f7f5f">//add items in the list</>
+				<span color="#9e3e63">animals</>.add(<span color="#0000c0">"dog"</>);
+				<span color="#9e3e63">animals</>.add(<span color="#0000c0">"cat"</>);
+				<span color="#9e3e63">animals</>.add(<span color="#0000c0">"mouse"</>);
+
+				<span color="#3f7f5f">//remove items from the list</>
+				<span color="#9e3e63">animals</>.remove(1); //removes the item at index 1, the "cat"
+				<span color="#9e3e63">animals</>.remove(<span color="#0000c0">"mouse"</>);
+
+				<span color="#3f7f5f">//get an item from the list</>
+				String <span color="#9e3e63">animal</> = <span color="#9e3e63">animals</>.get(0); <span color="#3f7f5f">//variable animal will be assigned with "dog" value</>
+				
+				<span color="#3f7f5f">//clear all items from the list</>
+				<span color="#9e3e63">animals</>.clear();
+			}
+		}
+
+
+<span style="bold" size="40">Iterating through an ArrayList</>
+We can iterate an ArrayList very easily with a looping statement.
+
+1) standard for loop
+	<span style="bold">Example:</>
+	<span style="bold" color="#7f0055">import</> java.util.ArrayList;
+		
+		<span style="bold" color="#7f0055">public class</> Main{
+			<span style="bold" color="#7f0055">public static void</> main(String[	 ] <span color="#9e3e63">args</>){
+				
+				<span>ArrayList<String></> <span color="#9e3e63">animals</> = <span style="bold" color="#7f0055">new</> ArrayList<String>();
+				
+				<span color="#9e3e63">animals</>.add(<span color="#0000c0">"dog"</>);
+				<span color="#9e3e63">animals</>.add(<span color="#0000c0">"cat"</>);
+				<span color="#9e3e63">animals</>.add(<span color="#0000c0">"mouse"</>);
+
+				<span style="bold" color="#7f0055">int</> <span color="#9e3e63">listSize</> = <span color="#9e3e63">animals</>.size(); <span color="#3f7f5f">//size() method returns how many elements the list contains</>
+				for(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">i</>=0;i<<span color="#9e3e63">listSize</>;<span color="#9e3e63">i</>++){
+					System.<span style="italic" color="#0000c0">out</>.println(<span color="#9e3e63">animals</>.get(<span color="#9e3e63">i</>));
+				}
+			}
+		}
+
+2) for-each loop
+	<span style="bold">Example:</>
+	<span style="bold" color="#7f0055">import</> java.util.ArrayList;
+		
+		<span style="bold" color="#7f0055">public class</> Main{
+			<span style="bold" color="#7f0055">public static void</> main(String[	 ] <span color="#9e3e63">args</>){
+				
+				<span>ArrayList<String></> <span color="#9e3e63">animals</> = <span style="bold" color="#7f0055">new</> ArrayList<String>();
+				
+				<span color="#9e3e63">animals</>.add(<span color="#0000c0">"dog"</>);
+				<span color="#9e3e63">animals</>.add(<span color="#0000c0">"cat"</>);
+				<span color="#9e3e63">animals</>.add(<span color="#0000c0">"mouse"</>);
+
+				<span color="#3f7f5f">//no size needed this time</>
+				for(String <span color="#9e3e63">s</> : <span color="#9e3e63">animals</>){
+					System.<span style="italic" color="#0000c0">out</>.println(<span color="#9e3e63">s</>);
+				}
+			}
+		}
+
+	The for-each loop will automatically iterate through all the elements of a list. At the code above,
+	each list-element from the animals list is assigned at the s variable per iteration.

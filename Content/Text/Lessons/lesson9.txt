@@ -1,0 +1,87 @@
+<span style="bold" size="40">Java Collections Framework</>
+In Java a collection, or a data stucture, is an object that represents a group of objects. The Java Collections Framework is a set or a library of classes, interfaces and implementations for representing and manipulating collections and allows us to create our own collections or data structures.
+
+<span style="bold" size="22">Advantages:</>
+- Less programming effort because it provides data structures and algorithms.
+- Better performance because it provides high-performance implementations of data structures and algorithms.
+- Provides interoperability by establishing a common language to pass collections back and forth.
+- Can extend and adapt a collection easily.
+
+<span style="bold" size="40">Most common Collections</>
+<span style="bold">List</>: defines a list as a more flexible version of an array. Elements have a specific order and duplicates are allowed. Elements can also be placed in a specific position and can be searched for within the list. The most common list is the ArrayList.
+
+<span style="bold">Stack</>: a collection object that follows the last-in-first-out(LIFO) way of returing an element. In other words the object that a Stack returns first is the latest one that was placed on the stack.
+
+<span style="bold">Queue</>: a collection that follows the first-in-first-out(FIFO) system. A Queue represents a real-life queue, so the elements are stored in the order in which they are inserted and they are removed from the front.
+
+<span style="bold">Set</>: a set can't contain duplicate elements and has no order. That is why elements can't be searched for within a set by index.
+
+<span style="bold">Map</>: maps represent some kind of dictionary collection. They associate a key with an element. If the key is the hash code of the element, the map is essentially a set. If it's just an increasing number, it becomes a list.
+
+<span style="bold" size="40">Most common Collections Algorithms</>
+The Collections Framework provides a lot of useful algorithms. Some of them are the following methods:
+- sort(List <span color="#9e3e63">l</>): it sorts the list into ascending order, according to the natural ordering of its elements.
+- reverse(List <span color="#9e3e63">l</>): reverses the order of the elements of the list.
+- shuffle(List <span color="#9e3e63">l</>): randomly shuffles the list elements, changing their positions.
+- swap(List <span color="#9e3e63">l</>, <span style="bold" color="#7f0055">int</> <span color="#9e3e63">index1</>, <span style="bold" color="#7f0055">int</> <span color="#9e3e63">index2</>): swaps the elements at the specified positions in the list.
+- frequency(Collection <span color="#9e3e63">c</>, Object <span color="#9e3e63">o</>): returns the number of elements in the specified collection that equal to the specified object.
+- min(Collection <span color="#9e3e63">c</>) and max(Collection <span color="#9e3e63">c</>): return the minimun and the maximum element of the specified collection respectively, according to the natural ordering of its elements.
+
+
+<span style="bold">Example Code of algorithms on ArrayList:</>
+<span style="bold" color="#7f0055">import</> java.util.*;
+<span style="bold" color="#7f0055">public class</> Main {
+
+	<span style="bold" color="#7f0055">public static void</> main(String[	 ] <span color="#9e3e63">args</>) {
+		
+		<span>ArrayList<String></> <span color="#9e3e63">names</> = <span style="bold" color="#7f0055">new</> ArrayList<String>();
+		
+		<span color="#9e3e63">names</>.add(<span color="#0000c0">"John"</>);
+		<span color="#9e3e63">names</>.add(<span color="#0000c0">"Bob"</>);
+		<span color="#9e3e63">names</>.add(<span color="#0000c0">"Nick"</>);
+		<span color="#9e3e63">names</>.add(<span color="#0000c0">"Mary"</>);
+		<span color="#9e3e63">names</>.add(<span color="#0000c0">"Helen"</>);
+		
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#0000c0">"----Sorted----"</>);
+		Collections.sort(<span color="#9e3e63">names</>);
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#9e3e63">names</>);
+		
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#0000c0">"----Reverse----"</>);
+		Collections.reverse(<span color="#9e3e63">names</>);
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#9e3e63">names</>);
+		
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#0000c0">"----Shuffle----"</>);
+		Collections.shuffle(<span color="#9e3e63">names</>);
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#9e3e63">names</>);
+		
+		Collections.swap(<span color="#9e3e63">names</>, 2, 3);
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#0000c0">"----Swap----"</>);
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#9e3e63">names</>);
+		
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#0000c0">"----Frequency----"</>);
+		<span color="#9e3e63">names</>.add(<span color="#0000c0">"Helen"</>);
+		<span color="#9e3e63">names</>.add(<span color="#0000c0">"Helen"</>);
+		<span style="bold" color="#7f0055">int</> <span color="#9e3e63">freq</> = Collections.frequency(<span color="#9e3e63">names</>, <span color="#0000c0">"Helen"</>);
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#0000c0">"Frequency of Helen: "</> + <span color="#9e3e63">freq</>);
+		
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#0000c0">"----Min Max----"</>);
+		String <span color="#9e3e63">max</> = Collections.max(<span color="#9e3e63">names</>);
+		String <span color="#9e3e63">min</> = Collections.min(<span color="#9e3e63">names</>);
+		System.<span style="italic" color="#0000c0">out</>.println(<span color="#9e3e63">min</> + <span color="#0000c0">" "</> + <span color="#9e3e63">max</>);
+	}
+		
+}
+
+<span style="italic" size="25">result on screen:</>
+----Sorted----
+[Bob, Helen, John, Mary, Nick]
+----Reverse----
+[Nick, Mary, John, Helen, Bob]
+----Shuffle----
+[Helen, John, Nick, Mary, Bob]
+----Swap----
+[Helen, John, Mary, Nick, Bob]
+----Frequency----
+Frequency of Helen: 3
+----Min Max----
+    Bob Nick

@@ -1,0 +1,8 @@
+Beyond the door there are three 
+different paths. One leads to 
+the end of this dark cave. The 
+others, leads to a rocky death! 
+Choose wisely.
+Or solve the code bellow, if you
+want to live another day! The right
+path is been print on the screen.

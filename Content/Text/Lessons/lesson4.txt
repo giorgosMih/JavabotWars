@@ -1,0 +1,63 @@
+<span style="bold" size="40">Constructors</>
+Constructors are special methods invoked when an object is instantiated (created). It can be used to initiallize the object's fields.
+-The constructor's name must be the same as the class name.
+-The constructor must not have a return type.
+
+e.g.:	<span style="bold" color="#7f0055">public class</> Book{
+			   <span style="bold" color="#7f0055">private</> String <span color="#0000c0">author</>;
+			   <span style="bold" color="#7f0055">private int</> <span color="#0000c0">numberOfPages</>;
+
+			   <span color="#3f7f5f">//constructor</>
+			   <span style="bold" color="#7f0055">public</> Book(String <span color="#9e3e63">a</>, <span style="bold" color="#7f0055">int</> <span color="#9e3e63">numPages</>){
+				   <span color="#0000c0">author</> = <span color="#9e3e63">a</>;
+				   <span color="#0000c0">numberOfPages</> = <span color="#9e3e63">numPages</>;
+			   }
+		   }
+
+Using a constructor during instantiation:
+<span style="bold" color="#7f0055">public class</> Main{
+	<span style="bold" color="#7f0055">public static void</> main(String[	 ] <span color="#9e3e63">args</>){
+		Book <span color="#9e3e63">b</> = <span style="bold" color="#7f0055">new</> Book(<span color="#0000c0">"J.R. Tolkien"</>, 456);
+	}
+}
+
+
+
+<span style="bold" size="40">Overloading</>
+Overloadding occurs when methods have the same name, but different parameters. It can be used for any method and for constructors as well.
+
+With constructor overloading we can have different alternatives during object instantiation.
+
+e.g.:	<span style="bold" color="#7f0055">public class</> Book{
+			   <span style="bold" color="#7f0055">private</> String <span color="#0000c0">author</>;
+			   <span style="bold" color="#7f0055">private int</> <span color="#0000c0">numberOfPages</>;
+
+			   <span color="#3f7f5f">//constructor 1st, without params</>
+			   <span style="bold" color="#7f0055">public</> Book(){
+				   <span color="#0000c0">author</> = <span color="#0000c0">"Default Author"</>;
+				   <span color="#0000c0">numberOfPages</> = 0;
+			   }
+
+			   <span color="#3f7f5f">//constructor 2nd, with one param</>
+			   <span style="bold" color="#7f0055">public</> Book(String <span color="#9e3e63">a</>){
+				   <span color="#0000c0">author</> = <span color="#9e3e63">a</>;
+				   <span color="#0000c0">numberOfPages</> = 0;
+			   }
+
+			   <span color="#3f7f5f">//constructor 3rd, with all params</>
+			   <span style="bold" color="#7f0055">public</> Book(String <span color="#9e3e63">a</>, <span style="bold" color="#7f0055">int</> <span color="#9e3e63">numPages</>){
+				   <span color="#0000c0">author</> = <span color="#9e3e63">a</>;
+				   <span color="#0000c0">numberOfPages</> = <span color="#9e3e63">numPages</>;
+			   }
+		   }
+
+Overloadding during instantiation:
+<span style="bold" color="#7f0055">public class</> Main{
+	<span style="bold" color="#7f0055">public static void</> main(String[	 ] <span color="#9e3e63">args</>){
+		Book <span color="#9e3e63">b1</> = <span style="bold" color="#7f0055">new</> Book();
+
+		Book <span color="#9e3e63">b2</> = <span style="bold" color="#7f0055">new</> Book(<span color="#0000c0">"J.R.R. Tolkien"</>);
+
+		Book <span color="#9e3e63">b3</> = <span style="bold" color="#7f0055">new</> Book(<span color="#0000c0">"J.R.R. Tolkien"</>, 543);
+	}
+}

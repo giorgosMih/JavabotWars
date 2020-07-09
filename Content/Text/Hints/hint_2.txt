@@ -1,0 +1,22 @@
+<span color="#d142f4ff" style="bold">public class</> Path{
+
+	<span color="#d142f4ff" style="bold">private int</> <span color="#4441f4ff">numberOfPath</>;
+	
+	<span color="#d142f4ff" style="bold">public</> Path(<span color="#d142f4ff" style="bold">int</> <span color="#9595b7ff">n</>){
+		<span color="#4441f4ff">numberOfPath</> = <span color="#9595b7ff">n</>;
+	}
+
+	<span color="#d142f4ff" style="bold">public int</> getPath(){
+		<span color="#d142f4ff" style="bold">return</> <span color="#4441f4ff">numberOfPath</>;
+	}
+
+	<span color="#d142f4ff" style="bold">public static void</> main(String[ ] <span color="#9595b7ff">args</>){
+		Path <span color="#9595b7ff">p1</> = <span color="#d142f4ff" style="bold">new</> Path(3);
+		Path <span color="#9595b7ff">p2</> = <span color="#d142f4ff" style="bold">new</> Path(2);
+		Path <span color="#9595b7ff">p3</> = <span color="#d142f4ff" style="bold">new</> Path(1);
+		
+		Path[] <span color="#9595b7ff">paths</> = {<span color="#9595b7ff">p1</>,<span color="#9595b7ff">p2</>,<span color="#9595b7ff">p3</>};
+		
+		System.<span color="#4441f4ff" style="italic">out</>.println(<span color="#9595b7ff">paths</>[2].getPath());
+	}
+}

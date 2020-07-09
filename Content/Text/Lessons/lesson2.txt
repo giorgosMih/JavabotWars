@@ -1,0 +1,50 @@
+<span style="bold" size="40">Fields</>
+Fields define the attributes or states of objects. They are nothing more than variables and object references. We can define as many attributes as necessary.
+
+e.g.:	<span style="bold" color="#7f0055">public class</> Book{
+			   String <span color="#0000c0">bookName</>;
+			   String <span color="#0000c0">writer</>;
+			   <span style="bold" color="#7f0055">int</> <span color="#0000c0">numberOfPages</>;
+
+			   ...
+		   }
+
+	<span style="italic">bookName, writer and numberOfPages are fields (attributes) of the class Book used to hold the title, the author and the number of pages of each book (object/instance) created from the class.</>
+
+
+<span style="bold" size="40">Access Modifiers (public vs private)</>
+- <span style="bold" color="#7f0055">public</>: the field is accessible from any other class.
+- <span style="bold" color="#7f0055">private</>: the field is accessible only within the declared class itself.
+
+
+<span style="bold" size="40">Encapsulation</>
+Encapsulation is the idea that implementation details should not be visible to users. The class variables or fields or attributes should be hidden from other classes and be accessible only through the methods of the current class. In order to achieve encapsulation, we declare fields and methods as private and provide public accessible getters and setters to view or modify fields' values.
+Getters are public methods that return the value of a field and have the same return type as the field. Setters are public void methods that have a parameter (of the same type with the field) that updates the value of the field. 
+All in all encapsulation provides:
+- control to the way data is accessed or modified.
+- more flexible and easily modified code.
+- ability to change one part of the code without affecting other parts.
+
+
+<span style="bold" size="40">Primitive Data Types</>
+Those are the basic data types in java. The basic data types are:
+	- <span style="bold">integers (whole numbers)</>.
+<span style="bold" color="#7f0055">byte</> in range [-128...127].
+<span style="bold" color="#7f0055">short</> in range [-32,768...32,767].
+<span style="bold" color="#7f0055">int</> in range [-2^31...2^31 -1].
+<span style="bold" color="#7f0055">long</> in range [-2^63...2^63 -1].
+
+	- <span style="bold">floating-point numbers</>
+<span style="bold" color="#7f0055">float</> and <span style="bold" color="#7f0055">double</>. Float has less precision in decimal points than double and consumes less memory than double. Also, after a float declaration we need to add an 'f' at the end of the number value.
+
+e.g.:	double number1 = 3.14;
+		   float number2 = 3.14f;
+
+
+<span style="bold" size="40">Static, Final</>
+A <span style="bold" color="#7f0055">static</> field (or method) belongs to the class itself, rather than the specific instance (object). In other words, there is only one instance of a static member, that all objects of the same class, share.
+
+A <span style="bold" color="#7f0055">final</> declaration marks a field as constant, so it can be assigned only once. The final field must be assigned a value at declaration and any attempt to re-assign a value will cause an error.
+A method can also be final, so that it can't be overridden and so that they can't be made subclasses by other classes.
+
+Static and final can be used in combination to declare a constant variable that is shared by all objects of the same class.

@@ -1,0 +1,44 @@
+<span style="bold" size="40">Inheritance</>
+Inheritance is called the process that enables a class to acquire(inherit) the properties (fields) and methods of another class. With inheritance, the code becomes more managåable and a hierarchical order is placed.
+
+<span style="bold" size="40">Superclass, subclass</>
+The class that inherits the properties of another one is called subclass (or child class or derived class) and the class whose properties are inherited is called superclass (or base class or parent class).
+Multilevel inheritance is also possible, so classes can have a parent class, a 'grand-parent' class, and so on.
+	<span style="bold">Example:</>	
+		<span style="italic">the class "C" can inherit from the the class "B", which class "B" inherits from another</>
+		<span style="italic">class, the class "A". So class "C" has "B" as parent class and "A" as 'grand-parent' class</>
+		<span style="italic">and class "B" has "A" as parent class.</>
+
+<span style="bold" size="40">Inheriting from a class</>
+To inherit from a class, we use the keyword <span style="bold" color="#7f0055">extends</> after our class name, followed by the superclass' name. When inheriting, the subclass inherits all the fields and non-private methods of the superclass. A class can only inherit directly from one other class.
+	<span style="bold">Example:</>	
+	<span style="bold" color="#7f0055">class</> Car <span style="bold" color="#7f0055">extends</> Vehicle{
+			<span color="#3f7f5f">//code here</>
+	}
+
+<span style="bold" size="28">Note:</> <span style="italic">All objects in Java automatically inherit from the Object class without the use of extends. That means that the highest parent in hierarchy is always the Object class.</>
+
+
+<span style="bold" size="40">Super in constructor</>
+We use super() to call the constructor of the parent class. Usually, we use it to call constructors that accept arguments and not no-argument constructors. If a constructor doesn't call a superclass constructor, the Java compiler will automatically call the no-argument constructor of the superclass. If the superclass doesn't have a no-argument constructor, then a compile error will appear. Finally, when a constructor calls a superclass constructor, there will be a whole chain of constructor calls all the way back to the Object class constructor, which is called constructor chaining.
+
+
+<span style="bold" size="40">Accessing "private" fields from superclass</>
+A private field cannot be accessed by any other class except its own class. That means that subclasses inheriting from a class cannot access the superclass' private fields. In order to be able to keep the fields private in a class and allow any subclass to access them, we need to use another Access Modifier instead of private, the protected modifier. The protected modifier ensures that the field is only accessible by its own class and by any subclass of this class.
+	<span style="bold">Example:</>	
+		<span style="bold" color="#7f0055">class</> Animal{
+			<span style="bold" color="#7f0055">protected int</> <span color="#0000c0">age</>;
+			......
+		}
+
+		<span style="bold" color="#7f0055">class</> Cat <span style="bold" color="#7f0055">extends</> Animal{
+			<span style="bold" color="#7f0055">private</> String <span color="#0000c0">name</>;
+
+			<span style="bold" color="#7f0055">public</> Cat(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">anAge</>, String <span color="#9e3e63">aName</>){
+				<span color="#0000c0">age</> = <span color="#9e3e63">anAge</>;
+				<span color="#0000c0">name</> = <span color="#9e3e63">aName</>;
+				.....
+			}
+		}
+
+Alternatively, we can keep the fields in the superclass private and provide getters and setters in order to access the superclass fields from its subclasses.

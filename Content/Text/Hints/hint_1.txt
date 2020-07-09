@@ -1,0 +1,10 @@
+<span color="#d142f4ff" style="bold">public class</> Main {
+	<span color="#d142f4ff" style="bold">public static void</> main(String[ ] <span color="#9595b7ff">args</>){
+		<span color="#d142f4ff" style="bold">int</> trees = 3;
+		<span color="#d142f4ff" style="bold">int</> hologramTrees = 2;
+		
+		<span color="#d142f4ff" style="bold">int</> realTree = trees - hologramTrees;
+		realTree++;
+		System.<span color="#4441f4ff" style="italic">out</>.println(realTree);
+	}
+}

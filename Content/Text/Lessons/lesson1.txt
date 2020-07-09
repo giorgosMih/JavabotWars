@@ -1,0 +1,12 @@
+<span style="bold" size="40">Object-Oriented Programming</>
+Java is an Object-Oriented Programming(OOP) language. OOP is a programming style that is being used to simplify the programming thinking and bring it closer to thinking about the real world. In OOP, each object is an independent unit with a unique identity, like objects in the real world.
+
+	<span style="italic">e.g.: a table is an object, so is a chair. Each has a unique identity. It is possible to have two chairs that look identical, but they are still seperate, unique objects.</>
+
+Real world objects have some characteristics. Those are state and behavior. The state is described from the attributes of an object, such as color, size, name. The bahavior describes how the object behaves in the real world, so for example a car can move or horn, a dog can bark or eat.
+
+<span style="bold" size="40">Classes</>
+In programming, a class is like a blueprint to create an object, but it's completely seperate from the object itself. From the same class we can create multiple different, unique objects.
+Every class has a name and, since they are blueprints for object constraction, they define attributes state) and behavior in the form of code. Attributes are described by fields and behavior by methods.
+
+In Java, even for the simplest programm, one needs to create a class and define the 'main' method, which is the starting point of a programm. Also, Java contains all the fundamental flow control statements that every programming language does. Those statements are decision-making statements(if-then, if-then-else, switch), looping statements(for, while, do-while) and branching statements(break, continue, return).

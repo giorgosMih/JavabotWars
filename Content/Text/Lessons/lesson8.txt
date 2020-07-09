@@ -1,0 +1,102 @@
+<span style="bold" size="40">Abstraction</>
+In OOP, abstraction is called the process of hiding the implementation details and provide only the functionality. In other words, we care about what an object does and not how it does it. In java, abstraction can be achieved with abstract classes and interfaces.
+
+<span style="bold" size="40">Abstract Class</>
+A class is abstract when it contains the keyword abstract in its declaration.
+	- An abstract class may or may not contain abstract methods.
+	- On the other hand, any class that contains at least an abstract method must be declared abstract.
+	- An abstract class cannot be instantiated (you cannot create objects of this class).
+	- To use an abstract class, you have to inherit it from another class and provide implementations to the abstract methods.
+	- If you inherit an abstract class, you must provide implementations to all the abstract methods in it.
+
+
+Abstract methods are declared without a body (without any code in them).
+	-You have to place the abstract keyword before the method name in the method declaration.
+	-An abstract method contains a method signature, but no method body.
+	-Instead of curly braces, an abstract method will have a semicolon (;) at the end.
+
+	<span style="bold">Example:</>	
+	<span style="bold" color="#7f0055">public abstract class</> Animal{
+		<span style="bold" color="#7f0055">protected int</> <span color="#0000c0">age</>; <span color="#3f7f5f">//only accessible by this class and by subclasses</>
+		
+		<span style="bold" color="#7f0055">public abstract void</> makeSound(); <span color="#3f7f5f">//abstract method declaration, no body</>
+	}
+
+	<span style="bold" color="#7f0055">public class</> Dog <span style="bold" color="#7f0055">extends</> Animal{
+		
+		<span style="bold" color="#7f0055">public</> Dog(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">age</>){
+			<span style="bold" color="#7f0055">this</>.<span color="#0000c0">age</> = <span color="#9e3e63">age</>;
+		}
+
+		<span color="#3f7f5f">//implements the superclass makeSound abstract method</>
+		<span style="bold" color="#7f0055">public void</> makeSound(){
+			System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"wooof"</>);
+		}
+	}
+
+	<span style="bold" color="#7f0055">public class</> Cat <span style="bold" color="#7f0055">extends</> Animal{
+		
+		<span style="bold" color="#7f0055">public</> Cat(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">age</>){
+			<span style="bold" color="#7f0055">this</>.<span color="#0000c0">age</> = <span color="#9e3e63">age</>;
+		}
+
+		<span color="#3f7f5f">//implements the superclass makeSound abstract method</>
+		<span style="bold" color="#7f0055">public void</> makeSound(){
+			System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"meow"</>);
+		}
+	}
+
+
+<span style="bold" size="40">Interface</>
+It is similar to an abstract class, but it contains only abstract methods.
+- An Interface cannot be instantiated.
+- An Interface cannot contain any constructors.
+- All of the methods in an Interface must be abstract (no need for abstract keyword).
+- An Interface cannot contain fields (variables), except if they are declared both static and final (they must be shared constants).
+- It is not extended by a class; it is implemented.
+- An interface can extend multiple interfaces (also a class can implement multiple interfaces, but extends only one class).
+- The class that implements an interface must implement all of its methods.
+
+<span style="bold">Note:</> <span style="italic">Methods declared in an interface are by default public, so the access modifier can be ommited.</>
+
+<span style="bold">Interface declaration and implementation</>
+We declare an interface by using the keyword interface followed by a name. To use the interface, after the class name we use the keyword implements followed by the interface's name.
+
+	<span style="bold">Example:</>	
+		<span style="bold" color="#7f0055">public interface</> Animal{
+			<span style="bold" color="#7f0055">public void</> eat();
+			<span style="bold" color="#7f0055">public void</> sleep();
+			<span style="bold" color="#7f0055">public void</> makeSound();
+		}
+
+		<span style="bold" color="#7f0055">public class</> Dog <span style="bold" color="#7f0055">implements</> Animal{
+
+			<span style="bold" color="#7f0055">public void</> eat(){
+				System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"omnomnomn"</>);
+			}
+
+			<span style="bold" color="#7f0055">public void</> sleep(){
+				System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"zzzzzz.."</>);
+			}
+
+			<span style="bold" color="#7f0055">public void</> makeSound(){
+				System.<span color="#0000c0" style="italic">out</>.println(<span color="#0000c0">"wooof"</>);
+			}
+		}
+
+An interface can also extend multiple interfaces. The child interface will inherit all the methods from the parent inteface. So a class implementing the child interface, will need to implement all the methods from both the child and the parent interface.
+	<span style="bold">Example:</>	
+		<span style="bold" color="#7f0055">public interface</> Sports {
+   			<span style="bold" color="#7f0055">public void</> setHomeTeam(String <span color="#9e3e63">name</>);
+   			<span style="bold" color="#7f0055">public void</> setVisitingTeam(String <span color="#9e3e63">name</>);
+		}
+
+		<span style="bold" color="#7f0055">public interface</> Football <span style="bold" color="#7f0055">extends</> Sports {
+   			<span style="bold" color="#7f0055">public void</> homeTeamScored(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">points</>);
+   			<span style="bold" color="#7f0055">public void</> visitingTeamScored(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">points</>);
+		}
+
+		<span style="bold" color="#7f0055">public interface</> Basketball <span style="bold" color="#7f0055">extends</> Sports {
+  			<span style="bold" color="#7f0055">public void</> homeGoalScored();
+   			<span style="bold" color="#7f0055">public void</> visitingGoalScored();
+		}

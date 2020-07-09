@@ -1,0 +1,31 @@
+<span style="bold" size="40">Methods</>
+Methods define the behavior of an object and how it will interact with the outside world (with other classes). A method is a collection of statements that are grouped together to perform a specific operation. A method must have a name, that follows the naming rules of Java, and a return type. It can optionally have input parameters.
+To call a method, type its name and then a set of parenthesis. Inside these parenthesis you have to add the input parameters, if the method accepts any. A method can be called as many times as you want.
+
+<span style="bold" size="40">Return Types</>
+A method can optionally return a value by using the return statement inside the method itself. During declaration, you must declare what data type the method returns. If we do not want anything to return, we declare the method as void. If the method is not void, then it must return at the end a value of the declared return type. We can call a method with a return type and assign its value directly to a variable.
+
+e.g.:	<span style="bold" color="#7f0055">int</> add(<span style="bold" color="#7f0055">int</> <span color="#9e3e63">num1</>, <span style="bold" color="#7f0055">int</> <span color="#9e3e63">num2</>){
+			   <span style="bold" color="#7f0055">return</> <span color="#9e3e63">num1</> + <span color="#9e3e63">num2</>;
+		   }
+
+		   <span style="bold" color="#7f0055">int</> <span color="#9e3e63">sum</> = add(1,3); <span color="#3f7f5f">//sum contains now 4.</>
+
+
+<span style="bold" size="40">Getters and Setters</>
+are methods used to ensure the principle of encapsulation. For each field, get methods return its value, and set methods, set its value.
+Normally we declare getters, starting with get followed by the field name, with the first letter of the field name capitalized. And setters, starting with set followed by the field name, with the first letter of the field name capitalized.
+
+e.g.: 	<span style="bold" color="#7f0055">public class</> Book{
+			   <span style="bold" color="#7f0055">private</> String <span color="#0000c0">author</>;
+
+			   <span color="#3f7f5f">//Getter</>
+			   <span style="bold" color="#7f0055">public</> String getAuthor(){
+				   <span style="bold" color="#7f0055">return</> <span color="#0000c0">author</>;
+			   }
+
+			   <span color="#3f7f5f">//Setter</>
+			   <span style="bold" color="#7f0055">public void</> setAutor(String <span color="#9e3e63">a</>){
+				   <span color="#0000c0">author</> = <span color="#9e3e63">a</>;
+			   }
+		   }

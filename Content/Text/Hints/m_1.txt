@@ -1,0 +1,8 @@
+After this building, you will find
+three fallen trees. Only one is real.
+The others are holograms. You need to
+find which one is the real one, in order
+to continue your journey alive!
+
+The code bellow prints on the screen 
+the number of the real tree.
